@@ -1,0 +1,46 @@
+<body>
+    <div class="principal-container">
+        <img src="../../assets/Pilotos_Carrera.jpg" alt="foto de varios pilotos de carreras">
+        <div class="arrow">
+            <a href="#">
+                <img src="../../assets/Iconos_Web_Carreras_Flecha_1.png" alt="Flecha para ir a siguiente página">
+            </a>
+        </div>
+        <p class="">home</p>
+        <div class="orange-circle">
+            <p>Learn More</p>
+        </div>
+        <div class="semicircle">
+            <img src="../../assets/iconocomentario.svg" alt="ícono para abrir la columna de noticias">
+        </div>
+        <div class="sidebar" id="sideBar">
+            <div class="flex-container">
+                <div class="left-column">        
+                    <h3>ultima semana</h3>                   
+                    <div class="notice-container" *ngFor="let noticia of noticias; let i = index">
+                        <h5>comentario #{{i}}</h5>
+                        <p>{{noticia.cuerpoNoticia}}</p>
+                    </div> 
+                    <p id="copy">copyright carreras 2022</p>    
+                </div>
+                <div class="right-column">
+                    <h3>proxima semana</h3>
+                    <div>
+                        <p>29-07</p>  
+                        <p>25-07</p>  
+                        <p>20-07</p>    
+                    </div>
+                    <div class="redes">
+                        <p class="item-redes">Fb</p>
+                        <p class="item-redes">Ig</p>
+                        <p class="item-redes">Ln</p>
+                        <p class="item-redes">Tw</p>
+                    </div>
+                    <span class="equis">
+                        <img id="cerrar" src="../../assets/Iconos_Web_Carreras_Cruz.png" alt="Cruz para cerrar sideBar">
+                    </span>  
+                </div>
+            </div>
+        </div>
+    </div>    
+</body>
