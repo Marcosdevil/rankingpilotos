@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { Pilotos } from '../interfaces/pilotos';
 import { Ranking } from '../interfaces/ranking';
+import { PilotosService } from '../services/pilotos.service';
 import { RankingService } from '../services/ranking.service';
 
 @Component({
@@ -8,6 +10,9 @@ import { RankingService } from '../services/ranking.service';
   styleUrls: ['./vista-ranking.component.css']
 })
 export class VistaRankingComponent implements OnInit {
+
+
+  public pilotos: Pilotos[] = [];
 
   public tablaRanking: Ranking[] = [
     {
@@ -252,10 +257,17 @@ export class VistaRankingComponent implements OnInit {
     }
   ];
 
-  constructor(private rankingService: RankingService) { }
+  constructor(private rankingService: RankingService, private pilotoService: PilotosService) { }
 
   ngOnInit(): void {
+    this.verPilotos();
     //this.rankingService.ptsXPiloto();
+  }
+
+  verPilotos(){
+    this.pilotoService.obtenerPilotos().subscribe(dato => {
+      this.pilotos = dato;      
+    });
   }
 
 }

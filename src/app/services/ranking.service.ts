@@ -1,7 +1,9 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { PilCatPunt } from '../interfaces/pil-cat-punt';
+import { Pilotos } from '../interfaces/pilotos';
 import { Ranking } from '../interfaces/ranking';
+import { PilotosService } from './pilotos.service';
 
 @Injectable({
   providedIn: 'root'
@@ -9,6 +11,8 @@ import { Ranking } from '../interfaces/ranking';
 export class RankingService {
 
   public tablaRanking: Ranking[] = [];
+
+  public pilotos: Pilotos[] = [];
 
   public puntosXPiloto: PilCatPunt[] = [
     {
@@ -195,10 +199,16 @@ export class RankingService {
     }
   ];
 
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient, private pilotosService: PilotosService) { }
+
+  verPilotos(){
+    this.pilotosService.obtenerPilotos().subscribe(dato => {
+      this.pilotos = dato;      
+      console.log(dato);
+      
+    });
+  }
 
   
   
-  ptsXPiloto(nombrePiloto: String) {
-  }
 }
