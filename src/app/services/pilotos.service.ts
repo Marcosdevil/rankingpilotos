@@ -10,6 +10,8 @@ export class PilotosService {
 
   public pilotos: Pilotos[] = [];
 
+  public nombresPilotos: any = [];
+
   public URL = "https://back-ranking.herokuapp.com/ver/pilotos"
 
   constructor(private http: HttpClient) { }
@@ -17,4 +19,5 @@ export class PilotosService {
   obtenerPilotos():Observable<Pilotos[]>{
     return this.http.get<Pilotos[]>(`${this.URL}`);
   }
+
 }
