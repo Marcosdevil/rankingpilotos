@@ -8,16 +8,15 @@ import { PilCatPunt } from '../interfaces/pil-cat-punt';
 })
 export class RankingService {
 
-  public URL_BASE = "https://back-ranking.herokuapp.com/ver";
+  public URL_BASE = "https://back-ranking.herokuapp.com/ver/pilCatPuntXPiloto/";
 
-  public URL_ENDPOINT = "/pilCatPuntXPiloto/"
 
 
 
   constructor(private http: HttpClient) { }
 
   TraerPilCatPunt(nombrePiloto:String):Observable<PilCatPunt[]>{
-    return this.http.get<PilCatPunt[]>(`${this.URL_BASE} ${this.URL_ENDPOINT}` + nombrePiloto);
+    return this.http.get<PilCatPunt[]>(`${this.URL_BASE}` + nombrePiloto);
   }
   
 } 
