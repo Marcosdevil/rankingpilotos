@@ -9,7 +9,7 @@ import { Noticia } from '../interfaces/noticia';
 })
 export class NoticiasService {
 
-  private URL = "https://back-ranking.herokuapp.com/ver/noticiasOrdenadas";
+  private URL = "https://complete-audry-privas06.koyeb.app/ver/noticiasOrdenadas";
 
   constructor(private http: HttpClient) { }
 

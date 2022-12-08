@@ -12,7 +12,7 @@ export class PilotosService {
 
   public nombresPilotos: any = [];
 
-  public URL = "https://back-ranking.herokuapp.com/ver/pilotos"
+  public URL = "https://complete-audry-privas06.koyeb.app/ver/pilotos"
 
   constructor(private http: HttpClient) { }
 

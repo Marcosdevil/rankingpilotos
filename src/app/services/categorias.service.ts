@@ -8,7 +8,7 @@ import { Categoria } from '../interfaces/categoria';
 })
 export class CategoriasService {
 
-  private url = "https://back-ranking.herokuapp.com/ver/categorias";
+  private url = "https://complete-audry-privas06.koyeb.app/ver/categorias";
 
   private categorias: Categoria[] = [
     {
