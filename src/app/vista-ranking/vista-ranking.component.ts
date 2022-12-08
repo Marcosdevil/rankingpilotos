@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { asapScheduler } from 'rxjs';
 import { PilCatPunt } from '../interfaces/pil-cat-punt';
 import { Pilotos } from '../interfaces/pilotos';
 import { Ranking } from '../interfaces/ranking';
@@ -27,7 +28,7 @@ export class VistaRankingComponent implements OnInit {
   ngOnInit(): void {
     this.verPilotos();
   }
-
+  
   verPilotos(){
     this.pilotoService.obtenerPilotos().subscribe(dato => {
       this.pilotos = dato;    
@@ -36,6 +37,7 @@ export class VistaRankingComponent implements OnInit {
       console.log(this.nombresPilotos);   
       this.verPilCatPunt();
     });
+    
   }
 
   verPilCatPunt(){
@@ -65,7 +67,7 @@ export class VistaRankingComponent implements OnInit {
   }
 
 
-  /*iterarPilotos(){
+  /*iterarPilotos(){ 
     return this.nombresPilotos.forEach(pilot => {
       pilot.RankingService.TraerPilCatPunt
     });
